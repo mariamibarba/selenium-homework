@@ -36,8 +36,8 @@ public class CommandsTest {
 
         WebDriverManager.chromedriver().setup();
         WebDriver newDriver = new ChromeDriver();
-        String url1 = "http://the-internet.herokuapp.com/drag_and_drop";
-        newDriver.get(url1);
+
+        newDriver.navigate().to("http://the-internet.herokuapp.com/drag_and_drop");
         newDriver.manage().window().maximize();
 
 
