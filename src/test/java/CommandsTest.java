@@ -5,6 +5,11 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
+import java.time.Duration;
+
+
+import static org.testng.AssertJUnit.assertEquals;
+
 public class CommandsTest {
 
     @Test
@@ -22,6 +27,7 @@ public class CommandsTest {
 
         WebElement inputField = driver.findElement(By.xpath("//input[@type='text']"));
         inputField.isEnabled();
+
         driver.findElement(By.id("message")).isDisplayed();
 
         driver.findElement(By.xpath("//button[contains(text(),'Disable')]")).isDisplayed();
@@ -58,9 +64,12 @@ public class CommandsTest {
             System.out.println("they have same y coordinates");
 
         }
-        driver.quit();
+        newDriver.quit();
 
 
 
     }
+
+
+
 }
