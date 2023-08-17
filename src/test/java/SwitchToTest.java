@@ -22,18 +22,23 @@ public class SwitchToTest {
         String url = "http://the-internet.herokuapp.com/iframe";
         driver.get(url);
 
+
+        // Click on 'Align center' icon
+        WebElement alignCenterIcon = driver.findElement(By.xpath("//*[@id=\"content\"]/div/div/div[1]/div[1]/div[2]/div/div[4]/button[2]/span"));
+        alignCenterIcon.click();
+
+        // Switch to the iframe
         WebElement iframe = driver.findElement(By.id("mce_0_ifr"));
         driver.switchTo().frame(iframe);
 
+        // Write text in the text field
         WebElement textField = driver.findElement(By.id("tinymce"));
         textField.clear();
         textField.sendKeys("Here Goes");
 
-
+        // Switch back to the main content
         driver.switchTo().defaultContent();
 
-        WebElement alignCenterIcon = driver.findElement(By.xpath("//*[@id=\"content\"]/div/div/div[1]/div[1]/div[2]/div/div[4]/button[2]/span"));
-        alignCenterIcon.click();
 
     }
     @Test
