@@ -5,11 +5,6 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
-import java.time.Duration;
-
-
-import static org.testng.AssertJUnit.assertEquals;
-
 public class CommandsTest {
 
     @Test
@@ -23,7 +18,7 @@ public class CommandsTest {
         WebElement enableButton = driver.findElement(By.xpath("//button[contains(text(),'Enable')]"));
 
         enableButton.click();
-        Thread.sleep(3000);
+
 
         WebElement inputField = driver.findElement(By.xpath("//input[@type='text']"));
         inputField.isEnabled();
@@ -33,7 +28,7 @@ public class CommandsTest {
         driver.findElement(By.xpath("//button[contains(text(),'Disable')]")).isDisplayed();
 
         inputField.sendKeys("Bootcamp");
-        Thread.sleep(3000);
+
         inputField.clear();
 
         driver.quit();
