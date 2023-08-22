@@ -2,6 +2,7 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.testng.annotations.AfterClass;
 
 import org.testng.annotations.BeforeClass;
@@ -15,8 +16,11 @@ public class Exceptions {
     @BeforeClass
     public void setUp() {
         WebDriverManager.chromedriver().setup();
-        driver = new ChromeDriver();
-        driver.manage().window().maximize();
+//        driver = new ChromeDriver();
+//        driver.manage().window().maximize();
+        ChromeOptions options = new ChromeOptions();
+        options.addArguments("headless");
+        driver = new ChromeDriver(options);
 
     }
     @Test
