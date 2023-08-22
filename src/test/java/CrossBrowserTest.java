@@ -7,6 +7,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.htmlunit.HtmlUnitDriver;
+import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
@@ -64,5 +65,11 @@ public class CrossBrowserTest {
         String actualText = (String) jsExecutor.executeScript("return arguments[0].textContent;", entriesBox);
         assert actualText.contains(expectedText) : "Text validation failed";
 
+    }
+    @AfterClass
+    public void tearDown() {
+        if (driver != null) {
+            driver.quit();
+        }
     }
 }
